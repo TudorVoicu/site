@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent, Typography, IconButton, Slider, Box } from "@mui/material";
 import { PlayArrow, Pause, SkipNext, SkipPrevious, VolumeUp } from "@mui/icons-material";
 
+const basePath = import.meta.env.BASE_URL; // Detects "/site/" on GitHub Pages
+
 // Function to fetch songs from playlist.json
 const fetchSongs = async () => {
   try {
-    const response = await fetch("/playlist.json"); // Load the playlist file
+    const response = await fetch(`${basePath}playlist.json`); // Load the playlist file
     if (!response.ok) throw new Error("Failed to load playlist.");
     const songs = await response.json();
     return songs.length ? shuffleArray(songs) : [];
