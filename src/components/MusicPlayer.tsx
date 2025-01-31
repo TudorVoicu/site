@@ -42,6 +42,7 @@ const MusicPlayer: React.FC = () => {
   // Handle play/pause
   const togglePlay = () => {
     if (audioRef.current) {
+      console.log("Now Playing:", playlist[currentIndex].src); // Log the actual file URL
       if (isPlaying) {
         audioRef.current.pause();
       } else {
