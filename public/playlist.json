@@ -1,12 +1,12 @@
 [
-  { "title": "Baby Doll - Dominic Fike", "src": "/audio/Baby_Doll_-_Dominic_Fike.mp3" },
-  { "title": "Clandestina - FILV & Edmofo (ft. Emma Peters)", "src": "/audio/Clandestina-FILV&Edmofo_(ft._Emma_Peters).mp3" },
-  { "title": "Crab Rave - Noisestorm", "src": "/audio/Crab_Rave_-_Noisestorm.mp3" },
-  { "title": "Following The Sun - SUPER-Hi x NEEKA", "src": "/audio/Following_The_Sun_-_SUPER-Hi_x_NEEKA.mp3" },
-  { "title": "Heat Waves - Glass Animals", "src": "/audio/Heat_Waves_-_Glass_Animals.mp3" },
-  { "title": "Humble - Ren (Feat. Eden Nash)", "src": "/audio/Humble_-_Ren_(Feat._Eden_Nash).mp3" },
-  { "title": "Laisse-moi t'aimer - Laurie Darmon", "src": "/audio/Laisse-moi_t_aimer_-_Laurie_Darmon.mp3" },
-  { "title": "Soulstorm - Patrice", "src": "/audio/Soulstorm_-_Patrice.mp3" },
-  { "title": "Sweet - Eurythmics", "src": "/audio/Sweet_-_Euritmics.mp3" },
-  { "title": "The Seed 2.0 - The Roots", "src": "/audio/The_Seed_2.0_-_The_Roots.mp3" }
+  { "title": "Baby Doll - Dominic Fike", "src": "audio/Baby_Doll_-_Dominic_Fike.mp3" },
+  { "title": "Clandestina - FILV & Edmofo (ft. Emma Peters)", "src": "audio/Clandestina-FILV&Edmofo_(ft._Emma_Peters).mp3" },
+  { "title": "Crab Rave - Noisestorm", "src": "audio/Crab_Rave_-_Noisestorm.mp3" },
+  { "title": "Following The Sun - SUPER-Hi x NEEKA", "src": "audio/Following_The_Sun_-_SUPER-Hi_x_NEEKA.mp3" },
+  { "title": "Heat Waves - Glass Animals", "src": "audio/Heat_Waves_-_Glass_Animals.mp3" },
+  { "title": "Humble - Ren (Feat. Eden Nash)", "src": "audio/Humble_-_Ren_(Feat._Eden_Nash).mp3" },
+  { "title": "Laisse-moi t'aimer - Laurie Darmon", "src": "audio/Laisse-moi_t_aimer_-_Laurie_Darmon.mp3" },
+  { "title": "Soulstorm - Patrice", "src": "audio/Soulstorm_-_Patrice.mp3" },
+  { "title": "Sweet - Eurythmics", "src": "audio/Sweet_-_Euritmics.mp3" },
+  { "title": "The Seed 2.0 - The Roots", "src": "audio/The_Seed_2.0_-_The_Roots.mp3" }
 ]

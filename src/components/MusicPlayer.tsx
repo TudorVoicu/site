@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent, Typography, IconButton, Slider, Box } from "@mui/material";
 import { PlayArrow, Pause, SkipNext, SkipPrevious, VolumeUp } from "@mui/icons-material";
 
-const basePath = import.meta.env.BASE_URL; // Detects "/site/" on GitHub Pages
+const basePath = import.meta.env.BASE_URL; 
 
 // Function to fetch songs from playlist.json
 const fetchSongs = async () => {
@@ -24,7 +24,7 @@ const MusicPlayer: React.FC = () => {
   const [playlist, setPlaylist] = useState<{ title: string; src: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.2);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
@@ -39,29 +39,36 @@ const MusicPlayer: React.FC = () => {
     loadSongs();
   }, []);
 
+
   // Handle play/pause
   const togglePlay = () => {
     if (audioRef.current) {
       console.log("Now Playing:", playlist[currentIndex].src); // Log the actual file URL
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
       setIsPlaying(!isPlaying);
     }
   };
 
+  useEffect(() => {
+  const timeout = setTimeout(() => {
+    if (isPlaying && audioRef.current) {
+      audioRef.current.play();
+      audioRef.current.volume = volume;
+    } else if (audioRef.current) {
+      audioRef.current.pause();
+    }
+  }, 200); // 200ms debounce
+
+  return () => clearTimeout(timeout); // Cleanup timeout if dependencies change
+}, [isPlaying, currentIndex]);
+
   // Handle next song
   const nextSong = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % playlist.length);
-    setIsPlaying(true); // Ensure the new song is marked as playing
   };
 
   // Handle previous song
   const prevSong = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + playlist.length) % playlist.length);
-    setIsPlaying(true);
   };
 
   // Handle volume change
@@ -94,7 +101,7 @@ const MusicPlayer: React.FC = () => {
       });
       audioRef.current.addEventListener("ended", nextSong); // Auto-play next song
     }
-  }, [currentIndex, volume]);
+  }, [currentIndex, volume, playlist]);
 
   if (!playlist.length) {
     return <Typography sx={{ padding: "1rem" }}>🎵 Loading songs...</Typography>;
